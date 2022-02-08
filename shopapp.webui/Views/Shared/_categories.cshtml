@@ -1,0 +1,12 @@
+ @* why these codes are there :d i don't know *@
+ 
+ @model List<Category>
+
+<div class="list-group">
+    @foreach (var category in Model)
+    {
+        @* .list-group-item.list-group-item-action bootsrap kısayol*@
+
+        <a href="#" class="list-group-item list-group-item-action">@category.Name</a>
+    }
+</div>

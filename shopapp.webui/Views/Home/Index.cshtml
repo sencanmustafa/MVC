@@ -1,0 +1,11 @@
+@section Header
+{
+    @await Html.PartialAsync("_header")
+}
+
+
+
+@section Categories
+{
+    @await Component.InvokeAsync("Categories")
+}
