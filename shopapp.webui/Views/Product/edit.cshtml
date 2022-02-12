@@ -17,12 +17,12 @@
         <label for="ImageUrl">Image Url : </label>
         <input asp-for="ImageUrl" value="@Model.ImageUrl" class="mb-3 mt-3">
     </div>
-    <div class="mb-3 mt-3">
+    @* <div class="mb-3 mt-3">
         <label for="CategoryId">CategoryId : </label>
         <select asp-for="CategoryId" value="@Model.CategoryId" asp-items="@ViewBag.Categories" class="form-control">
             <option selected disabled>Seçiniz</option>
         </select>
-    </div>
+    </div> *@
     <div class="mb-3 mt-3">
         <label for="Description">Description : </label>
         <textarea asp-for="Description" value="@Model.Description" class="form-control"></textarea>

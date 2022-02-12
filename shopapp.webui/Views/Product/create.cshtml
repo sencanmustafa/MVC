@@ -20,14 +20,14 @@
         <input asp-for="ImageUrl" value="@Model.ImageUrl" class="mb-3 mt-3">
         <span asp-validation-for="ImageUrl" class="text-danger"> </span>
     </div>
-    <div class="mb-3 mt-3">
+    @* <div class="mb-3 mt-3">
         <label for="CategoryId">CategoryId : </label>
         <select asp-for="CategoryId"  asp-items="@ViewBag.Categories" class="form-control">
             <option selected disabled>Seçiniz</option>
         </select>
         <span asp-validation-for="CategoryId" class="text-danger"></span>
 
-    </div>
+    </div> *@
     <div class="mb-3 mt-3">
         <label for="Description">Description : </label>
         <textarea asp-for="Description" value="@Model.Description" class="form-control"></textarea>

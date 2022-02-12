@@ -9,8 +9,8 @@ namespace shopapp.data.Concrete.SQL
 {
     public class SqlGenericRepository<TEntity, TContext> : IRepository<TEntity>
         //TEntity ve TContext in sınıf oldugu bilgisi ve new lenebilir
-        //TContext vgeneric bi dtabase Produdct veya Category nın hangısı oldugu gelen verıye gore otomatık olusacak Irepository gibi
-        //TEntity generic bi veri olacak category mı product mı oldugu gelen verıye gole otomatık olusacak
+        //TContext vgeneric bi dtabase Produdct veya Category nın hangısı oldugu gelen verıye gore otomatık olusacak ,Irepository gibi
+        //TEntity generic bi veri olacak category mı product mı oldugu gelen verıye gore otomatık olusacak
         where TEntity : class
         where TContext : DbContext,new()
     {

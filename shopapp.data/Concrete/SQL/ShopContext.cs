@@ -13,11 +13,17 @@ namespace shopapp.data.Concrete.SQL
         public DbSet<Category> Categories { get; set; }
 
         //Local sql server tanıtma
-        
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=SENCAN\SQLEXPRESS;Database=ShopApp;Trusted_Connection=True");
         }
-        
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //Databasede CategoryId ve ProductID nın Primary Key olması için gereken kod
+            modelBuilder.Entity<ProductCategory>().HasKey(c => new { c.CategoryId, c.ProductId });
+        }
+
     }
 }

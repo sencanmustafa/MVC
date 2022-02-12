@@ -20,7 +20,7 @@ namespace shopapp.entity
         
         public string ImageUrl { get; set; }
 
-        public List<ProductCategory> ProductCategory { get; set; }
+        public List<ProductCategory> ProductCategories { get; set; }
 
     }
 }

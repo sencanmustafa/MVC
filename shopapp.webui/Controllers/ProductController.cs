@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using shopapp.webui.Data;
-using shopapp.webui.Models;
+using shopapp.data;
+using shopapp.entity;
 
 
 namespace shopapp.webui.Controllers
@@ -25,34 +25,35 @@ namespace shopapp.webui.Controllers
 
             
 
-            var products = ProductRepository.Products;
-            if (id != null)
-            {
-                products = products.Where(p => p.CategoryId == id).ToList();
+            // var products = ProductRepository.Products;
+            // if (id != null)
+            // {
+            //     products = products.Where(p => p.CategoryId == id).ToList();
                
-            }
+            // }
 
-            //if input in not null => 
-            if (!string.IsNullOrEmpty(input))
-            {
+            // //if input in not null => 
+            // if (!string.IsNullOrEmpty(input))
+            // {
 
-                //search input layout if contains name or description in products
-                products = products.Where(i => i.Name.ToLower().Contains(input.ToLower()) || i.Description.Contains(input)).ToList();
+            //     //search input layout if contains name or description in products
+            //     products = products.Where(i => i.Name.ToLower().Contains(input.ToLower()) || i.Description.Contains(input)).ToList();
                 
-            }
+            // }
             
            
 
 
-            var productViewModel = new ProductViewModel()
-            {
+            // var productViewModel = new ProductViewModel()
+            // {
 
-                Products = products
-            };
+            //     Products = products
+            // };
 
 
 
-            return View(productViewModel);
+            // return View(productViewModel);
+            return View();
         }
 
 
@@ -66,7 +67,7 @@ namespace shopapp.webui.Controllers
         {   
             //select list metodu ıle aşırı yuklenmıs 3. metodu kullanarak  data valuenın nereye ilişkilendirileceği , ve data text field in nereye ilişkilendirileceğini belirledik
             
-            ViewBag.Categories = new SelectList(CategoryRepository.Categories,"CategoryId","Name");
+            // ViewBag.Categories = new SelectList(CategoryRepository.Categories,"CategoryId","Name");
             
             //Get ıle sayfayı ılk cagırdıgımız ıcın Buraya bir tane Product referansı tanımlamamız gerekıyor(Post da parametre olarak alıyıoruz burda almıyoruz) yoksa Nullreferance hatası alırız validationdan Product objesı olmadan gecemez 
             return View(new Product());
@@ -86,16 +87,17 @@ namespace shopapp.webui.Controllers
 
             //model state methodu Produt sınıfndakı validation(required vs) bilgilerini tutar!!
             //Model.state=> is.valide?? (kurallardan onay almış mı?)
-            if(ModelState.IsValid)
-            {
-                ProductRepository.AddProduct(p);
-                //return redirec list pages
-                return RedirectToAction("list"); 
-            }
-            else
-            {
-                return View(p);
-            }
+            // if(ModelState.IsValid)
+            // {
+            //     ProductRepository.AddProduct(p);
+            //     //return redirec list pages
+            //     return RedirectToAction("list"); 
+            // }
+            // else
+            // {
+            //     return View(p);
+            // }
+            return View();
             
             
             
@@ -107,24 +109,24 @@ namespace shopapp.webui.Controllers
         public IActionResult edit(int id)
         {
             //Category formundakı categoryId bılgısnın gelmesı ıcın bu satır gereklı
-             ViewBag.Categories = new SelectList(CategoryRepository.Categories,"CategoryId","Name");
+             //ViewBag.Categories = new SelectList(CategoryRepository.Categories,"CategoryId","Name");
             
             //Burda edit.cshtml sayfasının route ettıgı id parametreye gelır ve repositorydekı getById fonksiyonundan bir product'ı id ye baglı 
             //return eder ve bu product edit.cshtml ustundekı @model Product daki Product yerine geçer ve formlara yerleşir.
-            return View(ProductRepository.GetProductById(id));
+            return View();
         }
 
         [HttpPost]
         public IActionResult edit(Product p)
         {
-            ProductRepository.EditProduct(p);
+            //ProductRepository.EditProduct(p);
             return RedirectToAction("list");
         }
 
         [HttpPost]
         public IActionResult delete(int ProductId)
         {
-            ProductRepository.Delete(ProductId);
+            //ProductRepository.Delete(ProductId);
             return RedirectToAction("list");
            
         }

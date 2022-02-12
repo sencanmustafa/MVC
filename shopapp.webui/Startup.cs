@@ -9,6 +9,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.FileProviders;
 using System.IO;
+using shopapp.data.Abstract;
+using shopapp.data.Concrete.SQL;
+using shopapp.business.Abstract;
+using shopapp.business.Concrete;
 
 namespace shopapp.webui
 {
@@ -18,6 +22,9 @@ namespace shopapp.webui
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            //IProductrepo cagırıldıgı zaman sqlProductRepo dan nesne uretıp gonderecegız 
+            services.AddScoped<IProductRepository,SqlProductRepository>();
+            services.AddScoped<IProductService,ProductManager>();
             services.AddControllersWithViews();
         }
 

@@ -1,11 +1,25 @@
+@model ProductViewModel
+
 @section Header
 {
-    @await Html.PartialAsync("_header")
+@await Html.PartialAsync("_header")
 }
 
 
 
-@section Categories
+
+@if (Model.Products.Count == 0)
 {
-    @await Component.InvokeAsync("Categories")
+    @await Html.PartialAsync("_noproduct")
+}
+else
+{
+    <div class="row">
+        @foreach (var product in Model.Products)
+        {
+            <div class="col-md-3">
+                @await Html.PartialAsync("_product", product)
+            </div>
+        }
+    </div>
 }
