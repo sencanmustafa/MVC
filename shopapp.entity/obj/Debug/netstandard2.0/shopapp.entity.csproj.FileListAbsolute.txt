@@ -1,0 +1,8 @@
+C:\Users\pc\Masaüstü\Software\MVC\shopapp.entity\bin\Debug\netstandard2.0\shopapp.entity.deps.json
+C:\Users\pc\Masaüstü\Software\MVC\shopapp.entity\bin\Debug\netstandard2.0\shopapp.entity.dll
+C:\Users\pc\Masaüstü\Software\MVC\shopapp.entity\bin\Debug\netstandard2.0\shopapp.entity.pdb
+C:\Users\pc\Masaüstü\Software\MVC\shopapp.entity\obj\Debug\netstandard2.0\shopapp.entity.csprojAssemblyReference.cache
+C:\Users\pc\Masaüstü\Software\MVC\shopapp.entity\obj\Debug\netstandard2.0\shopapp.entity.AssemblyInfoInputs.cache
+C:\Users\pc\Masaüstü\Software\MVC\shopapp.entity\obj\Debug\netstandard2.0\shopapp.entity.AssemblyInfo.cs
+C:\Users\pc\Masaüstü\Software\MVC\shopapp.entity\obj\Debug\netstandard2.0\shopapp.entity.dll
+C:\Users\pc\Masaüstü\Software\MVC\shopapp.entity\obj\Debug\netstandard2.0\shopapp.entity.pdb
